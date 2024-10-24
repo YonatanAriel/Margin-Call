@@ -1,9 +1,25 @@
 /** @type {import('tailwindcss').Config} */
+import animations from "@midudev/tailwind-animations";
 export default {
   darkMode: ["class"],
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      animation: {
+        backgroundColor: "background 5s ease infinite",
+      },
+      keyframes: {
+        background: {
+          "0%, 100%": {
+            "background-size": "200% 200%",
+            "background-position": "left center",
+          },
+          "50%": {
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
+        },
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -57,5 +73,6 @@ export default {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [animations],
+  // plugins: [require("tailwindcss-animate")],
 };

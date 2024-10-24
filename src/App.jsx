@@ -13,6 +13,8 @@ function App() {
   //     nextQuestionRef?.scrollIntoView({ behavior: "smooth", block: "start" });
   //   }
   // };
+
+  //animate-jump animate-once animate-ease-linear
   const scrollToNextQuestion = (index) => {
     const ISLASTQUESTION = !(index < questions.length - 1);
     if (ISLASTQUESTION) return;
