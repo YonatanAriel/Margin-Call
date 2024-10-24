@@ -4,11 +4,13 @@ import Answer from "../answer";
 import { useEffect, useState } from "react";
 
 function Answers({
+  questionsLength,
   answers,
   correctAnswer,
   setCorrectAnswers,
   scrollToNextQuestion,
   index,
+  handleFinishQuiz,
 }) {
   const [disableClick, setDisableClick] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
@@ -20,6 +22,8 @@ function Answers({
   const handleAnswerClick = (clickedAnswer) => {
     setDisableClick(true);
     isCorrectAnswer(clickedAnswer) ? handleCorrectAnswer() : revealAnswer();
+    const ISLASTQUESTION = questionsLength - 1 == index;
+    if (ISLASTQUESTION) handleFinishQuiz();
     setTimeout(() => scrollToNextQuestion(index), 1500);
   };
   return (

@@ -1,26 +1,23 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import "./App.css";
 import Answers from "./components/ui/answers";
 import { questions } from "./data";
+import FinishPopup from "./components/popups/finishPopup";
 
 function App() {
   const [correctAnswers, setCorrectAnswers] = useState(0);
-  useEffect(() => console.log(correctAnswers), [correctAnswers]);
+  const [showFinishPopUp, setShowFinishPopUp] = useState(false);
   const questionRefs = useRef([]);
-  // const scrollToNextQuestion = (index) => {
-  //   if (index < questions.length - 1) {
-  //     const nextQuestionRef = questionRefs.current[index + 1];
-  //     nextQuestionRef?.scrollIntoView({ behavior: "smooth", block: "start" });
-  //   }
-  // };
 
-  //animate-jump animate-once animate-ease-linear
   const scrollToNextQuestion = (index) => {
     const ISLASTQUESTION = !(index < questions.length - 1);
     if (ISLASTQUESTION) return;
     const nextQuestionRef = questionRefs.current[index + 1];
     nextQuestionRef?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
+  const handleFinishQuiz = () => setShowFinishPopUp(true);
+
   return (
     <div className="flex justify-center w-full min-h-screen ">
       <img
@@ -29,6 +26,13 @@ function App() {
         alt=""
         className="fixed w-full h-screen -z-10"
       />
+      {showFinishPopUp && (
+        <FinishPopup
+          setShowFinishPopUp={setShowFinishPopUp}
+          questionsSum={questions.length}
+          correctAnswersSum={correctAnswers}
+        />
+      )}
       <ul className="w-10/12 sm:w-8/12 lg:w-6/12 ">
         {questions.map((q, i) => (
           <li
@@ -42,6 +46,8 @@ function App() {
                 {q.question}
               </h3>
               <Answers
+                handleFinishQuiz={handleFinishQuiz}
+                questionsLength={questions.length}
                 index={i}
                 scrollToNextQuestion={scrollToNextQuestion}
                 answers={q.answers}
