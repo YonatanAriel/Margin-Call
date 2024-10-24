@@ -1,7 +1,7 @@
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import Answer from "../answer";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function Answers({
   answers,
@@ -11,12 +11,15 @@ function Answers({
   index,
 }) {
   const [disableClick, setDisableClick] = useState(false);
+  const [showAnswer, setShowAnswer] = useState(false);
   const isCorrectAnswer = (clickedAnswer) => correctAnswer === clickedAnswer;
   const handleCorrectAnswer = () => setCorrectAnswers((prev) => prev + 1);
 
+  const revealAnswer = () => setShowAnswer(true);
+
   const handleAnswerClick = (clickedAnswer) => {
     setDisableClick(true);
-    isCorrectAnswer(clickedAnswer) && handleCorrectAnswer();
+    isCorrectAnswer(clickedAnswer) ? handleCorrectAnswer() : revealAnswer();
     setTimeout(() => scrollToNextQuestion(index), 1500);
   };
   return (
@@ -26,8 +29,9 @@ function Answers({
           disableClick && "pointer-events-none"
         } flex flex-col gap-5`}
       >
-        {answers.map((answer) => (
+        {answers?.map((answer) => (
           <Answer
+            showAnswer={showAnswer}
             isCorrectAnswer={isCorrectAnswer}
             key={answer}
             answer={answer}
