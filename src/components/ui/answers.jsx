@@ -1,24 +1,30 @@
 import { Label } from "@/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import Answer from "../answer";
 
-function Answers({ answers }) {
+function Answers({
+  answers,
+  correctAnswer,
+  setCorrectAnswers,
+  scrollToNextQuestion,
+  index,
+}) {
+  const isCorrectAnswer = (clickedAnswer) => correctAnswer === clickedAnswer;
+  const handleCorrectAnswer = () => setCorrectAnswers((prev) => prev + 1);
+  const handleClick = (clickedAnswer) => {
+    isCorrectAnswer(clickedAnswer) && handleCorrectAnswer();
+    setTimeout(() => scrollToNextQuestion(index), 1000);
+  };
   return (
     <>
       <RadioGroup className="flex flex-col gap-5">
         {answers.map((answer) => (
-          <div
+          <Answer
             key={answer}
-            className="flex items-center gap-3 p-4 rounded-2xl bg-purple-50 bg-opacity-35 border hover:border-lightPurple hover:scale-[101%] duration-75 transition-transform border-regularPurple border-solid"
-          >
-            <RadioGroupItem
-              value={answer}
-              id={answer}
-              className="w-6 h-6 color-strongPurple"
-            />
-            <Label className="text-base  text-strongPurple" htmlFor={answer}>
-              {answer}
-            </Label>
-          </div>
+            answer={answer}
+            handleClick={handleClick}
+            scrollToNextQuestion={scrollToNextQuestion}
+          />
         ))}
       </RadioGroup>
     </>
