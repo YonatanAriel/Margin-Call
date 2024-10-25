@@ -16,12 +16,12 @@ function App() {
     nextQuestionRef?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  const handleFinishQuiz = () => setShowFinishPopUp(true);
+  const handleFinishQuiz = () =>
+    setTimeout(() => setShowFinishPopUp(true), 1500);
 
   return (
     <div className="flex justify-center w-full min-h-screen ">
       <img
-        // src="\light_purple.webp"
         src="\light_purple2.jpg"
         alt=""
         className="fixed w-full h-screen -z-10"
