@@ -7,7 +7,7 @@ function FinishPopup({ correctAnswersSum, questionsSum, setShowFinishPopUp }) {
     if (PERCENTAGE === 100) return "Wow, you’re a master! Full marks!";
     else if (PERCENTAGE >= 80) {
       return "Awesome effort! You’re so close to perfection!";
-    } else if (PERCENTAGE >= 50) {
+    } else if (PERCENTAGE >= 45) {
       return "Good work! You’re getting there!";
     } else return "Don’t give up! Every attempt makes you better!";
   }
