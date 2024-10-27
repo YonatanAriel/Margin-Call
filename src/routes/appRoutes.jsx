@@ -1,3 +1,4 @@
+import Loading from "@/components/ui/loading";
 import Home from "@/pages/home";
 import { lazy, Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
@@ -11,7 +12,7 @@ function AppRoutes() {
       <Route
         path="quiz"
         element={
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<Loading />}>
             <Quiz />
           </Suspense>
         }
