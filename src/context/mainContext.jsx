@@ -4,7 +4,7 @@ import { createContext, useEffect, useState } from "react";
 export const Context = createContext(undefined);
 
 function MainContext({ children }) {
-  const [currentQuestions, setCurrentQuestions] = useState(questions);
+  const [currentQuestions, setCurrentQuestions] = useState(questions.flexBox);
   const [correctAnswers, setCorrectAnswers] = useState(0);
 
   useEffect(() => console.log(questions), []);
