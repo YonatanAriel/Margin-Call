@@ -1,7 +1,6 @@
-import { Label } from "@/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { RadioGroup } from "@/components/ui/radio-group";
 import Answer from "../answer";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 function Answers({
   questionsLength,
@@ -14,6 +13,7 @@ function Answers({
 }) {
   const [disableClick, setDisableClick] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
+
   const isCorrectAnswer = (clickedAnswer) => correctAnswer === clickedAnswer;
   const handleCorrectAnswer = () => setCorrectAnswers((prev) => prev + 1);
 

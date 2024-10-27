@@ -1,23 +1,17 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 import Answers from "../components/ui/answers";
 import { questions } from "../data.js";
 import FinishPopup from "../components/popups/finishPopup";
+import UseQuizNavigation from "@/hooks/useQuizNavigation";
 
 function Quiz() {
   const [correctAnswers, setCorrectAnswers] = useState(0);
   const [showFinishPopUp, setShowFinishPopUp] = useState(false);
-  const questionRefs = useRef([]);
 
-  const scrollToNextQuestion = (index) => {
-    const ISLASTQUESTION = !(index < questions.length - 1);
-    if (ISLASTQUESTION) return;
-    const nextQuestionRef = questionRefs.current[index + 1];
-    nextQuestionRef?.scrollIntoView({ behavior: "smooth", block: "start" });
-  };
+  const { scrollToNextQuestion, questionRefs } = UseQuizNavigation(questions);
 
   const handleFinishQuiz = () =>
     setTimeout(() => setShowFinishPopUp(true), 1500);
-
   return (
     <div className="flex justify-center w-full min-h-screen ">
       <img
