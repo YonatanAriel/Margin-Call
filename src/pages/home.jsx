@@ -1,4 +1,4 @@
-import QuestionMarks from "@/components/ui/home/questionMarks";
+// import QuestionMarks from "@/components/ui/home/questionMarks";
 import Titles from "@/components/ui/home/titles";
 import TopicCards from "@/components/ui/home/TopicCards";
 
