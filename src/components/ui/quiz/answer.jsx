@@ -4,11 +4,6 @@ import AnswerContainer from "./answerContainer";
 import useAnswerAnimation from "@/hooks/useAnswerAnimation";
 
 function Answer({ answer, handleAnswerClick, isCorrectAnswer, showAnswer }) {
-  // const [userAnswered, setUserAnswered] = useState({
-  //   correct: false,
-  //   incorrect: false,
-  // });
-  // const [secondAnimation, setSecondAnimation] = useState(false);
   const { userAnswered, secondAnimation, handleAnimation } =
     useAnswerAnimation();
 
@@ -18,17 +13,6 @@ function Answer({ answer, handleAnswerClick, isCorrectAnswer, showAnswer }) {
       : userAnswered.incorrect
       ? "bg-[#FF003F]"
       : "color-strongPurple";
-
-  // const handleAnimation = (isUserCorrect) => {
-  //   setTimeout(() => {
-  //     setSecondAnimation(true);
-  //   }, 1000);
-  //   if (isUserCorrect) {
-  //     setUserAnswered((prev) => ({ ...prev, correct: true }));
-  //   } else {
-  //     setUserAnswered((prev) => ({ ...prev, incorrect: true }));
-  //   }
-  // };
 
   const handleClick = () => {
     const isUserCorrect = isCorrectAnswer(answer);
