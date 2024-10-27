@@ -9,13 +9,8 @@ function Quiz() {
   return (
     <div className="flex justify-center w-full min-h-screen ">
       <QuizBackground />
-      {isPopupVisible && (
-        <FinishPopup
-          hidePopup={hidePopup}
-          showPopupAfterDelay={showPopupAfterDelay}
-        />
-      )}
       <QuestionsList showPopupAfterDelay={showPopupAfterDelay} />
+      {isPopupVisible && <FinishPopup hidePopup={hidePopup} />}
     </div>
   );
 }

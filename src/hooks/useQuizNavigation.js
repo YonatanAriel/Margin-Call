@@ -1,5 +1,5 @@
 import { useRef } from "react";
-function UseQuizNavigation(questions) {
+function useQuizNavigation(questions) {
   const questionRefs = useRef([]);
 
   const scrollToNextQuestion = (index) => {
@@ -13,4 +13,4 @@ function UseQuizNavigation(questions) {
   return { questionRefs, scrollToNextQuestion };
 }
 
-export default UseQuizNavigation;
+export default useQuizNavigation;

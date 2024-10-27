@@ -1,5 +1,4 @@
 import { RadioGroup } from "@/components/ui/radio-group";
-
 import { useContext, useState } from "react";
 import { Context } from "@/context/mainContext";
 import Answer from "./answer";
@@ -11,10 +10,10 @@ function Answers({
   scrollToNextQuestion,
   showPopupAfterDelay,
 }) {
-  const { currentQuestions } = useContext(Context);
+  const { currentQuestions, setCorrectAnswers } = useContext(Context);
   const [disableClick, setDisableClick] = useState(false);
   const [showAnswer, setShowAnswer] = useState(false);
-  const { setCorrectAnswers } = useContext(Context);
+
   const isCorrectAnswer = (clickedAnswer) => correctAnswer === clickedAnswer;
   const handleCorrectAnswer = () => setCorrectAnswers((prev) => prev + 1);
   const revealAnswer = () => setShowAnswer(true);
@@ -22,8 +21,8 @@ function Answers({
   const handleAnswerClick = (clickedAnswer) => {
     setDisableClick(true);
     isCorrectAnswer(clickedAnswer) ? handleCorrectAnswer() : revealAnswer();
-    const ISLASTQUESTION = currentQuestions?.length - 1 == index;
-    if (ISLASTQUESTION) showPopupAfterDelay(1500);
+    const isLastQuestion = currentQuestions?.length - 1 == index;
+    if (isLastQuestion) showPopupAfterDelay(1500);
     setTimeout(() => scrollToNextQuestion(index), 1500);
   };
   return (

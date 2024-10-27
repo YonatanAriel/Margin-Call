@@ -1,12 +1,12 @@
 import Question from "./question";
 import { useContext } from "react";
 import { Context } from "@/context/mainContext";
-import UseQuizNavigation from "@/hooks/useQuizNavigation";
+import useQuizNavigation from "@/hooks/useQuizNavigation";
 
 function QuestionsList({ showPopupAfterDelay }) {
   const { currentQuestions } = useContext(Context);
   const { scrollToNextQuestion, questionRefs } =
-    UseQuizNavigation(currentQuestions);
+    useQuizNavigation(currentQuestions);
 
   return (
     <ul className="w-10/12 sm:w-8/12 lg:w-6/12 ">
