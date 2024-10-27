@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 import Answers from "./answers";
 
 const Question = forwardRef(
-  ({ q, index, handleFinishQuiz, scrollToNextQuestion }, ref) => (
+  ({ q, index, scrollToNextQuestion, showPopupAfterDelay }, ref) => (
     <li
       ref={ref}
       key={q.question}
@@ -15,7 +15,7 @@ const Question = forwardRef(
           {q.question}
         </h3>
         <Answers
-          handleFinishQuiz={handleFinishQuiz}
+          showPopupAfterDelay={showPopupAfterDelay}
           index={index}
           scrollToNextQuestion={scrollToNextQuestion}
           answers={q.answers}

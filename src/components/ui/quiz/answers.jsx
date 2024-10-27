@@ -8,8 +8,8 @@ function Answers({
   answers,
   correctAnswer,
   index,
-  handleFinishQuiz,
   scrollToNextQuestion,
+  showPopupAfterDelay,
 }) {
   const { currentQuestions } = useContext(Context);
   const [disableClick, setDisableClick] = useState(false);
@@ -23,7 +23,7 @@ function Answers({
     setDisableClick(true);
     isCorrectAnswer(clickedAnswer) ? handleCorrectAnswer() : revealAnswer();
     const ISLASTQUESTION = currentQuestions?.length - 1 == index;
-    if (ISLASTQUESTION) handleFinishQuiz();
+    if (ISLASTQUESTION) showPopupAfterDelay(1500);
     setTimeout(() => scrollToNextQuestion(index), 1500);
   };
   return (

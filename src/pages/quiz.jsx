@@ -1,20 +1,21 @@
-import { useState } from "react";
 import FinishPopup from "../components/popups/finishPopup";
 import QuestionsList from "@/components/ui/quiz/questionsList";
 import QuizBackground from "@/components/ui/quiz/quizBackground";
+import usePopup from "@/hooks/usePopup";
 
 function Quiz() {
-  const [showFinishPopUp, setShowFinishPopUp] = useState(false);
+  const { isPopupVisible, showPopupAfterDelay, hidePopup } = usePopup();
 
-  const handleFinishQuiz = () =>
-    setTimeout(() => setShowFinishPopUp(true), 1500);
   return (
     <div className="flex justify-center w-full min-h-screen ">
       <QuizBackground />
-      {showFinishPopUp && (
-        <FinishPopup setShowFinishPopUp={setShowFinishPopUp} />
+      {isPopupVisible && (
+        <FinishPopup
+          hidePopup={hidePopup}
+          showPopupAfterDelay={showPopupAfterDelay}
+        />
       )}
-      <QuestionsList handleFinishQuiz={handleFinishQuiz} />
+      <QuestionsList showPopupAfterDelay={showPopupAfterDelay} />
     </div>
   );
 }

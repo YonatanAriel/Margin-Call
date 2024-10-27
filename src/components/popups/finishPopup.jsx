@@ -1,8 +1,7 @@
 import { Context } from "@/context/mainContext";
 import { useContext, useEffect, useState } from "react";
 
-// function FinishPopup({ correctAnswers, questions.length, setShowFinishPopUp }) {
-function FinishPopup({ setShowFinishPopUp }) {
+function FinishPopup({ hidePopup }) {
   const [resultMessage, setResultMessage] = useState();
 
   const { currentQuestions, correctAnswers } = useContext(Context);
@@ -24,7 +23,7 @@ function FinishPopup({ setShowFinishPopUp }) {
 
   return (
     <div
-      onClick={() => setShowFinishPopUp(false)}
+      onClick={hidePopup}
       className="fixed z-10 flex items-center justify-center w-full h-screen backdrop-blur-sm animate-tada "
     >
       <div className="flex flex-col items-center justify-center w-11/12 gap-4 px-4 text-center border-2 border-solid rounded-2xl py-28 bg-veryLightPurple lg:w-6/12 sm:w-10/12 md:w-8/12 border-strongPurple">

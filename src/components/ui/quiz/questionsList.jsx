@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { Context } from "@/context/mainContext";
 import UseQuizNavigation from "@/hooks/useQuizNavigation";
 
-function QuestionsList({ handleFinishQuiz }) {
+function QuestionsList({ showPopupAfterDelay }) {
   const { currentQuestions } = useContext(Context);
   const { scrollToNextQuestion, questionRefs } =
     UseQuizNavigation(currentQuestions);
@@ -17,7 +17,7 @@ function QuestionsList({ handleFinishQuiz }) {
           key={question + index}
           q={question}
           index={index}
-          handleFinishQuiz={handleFinishQuiz}
+          showPopupAfterDelay={showPopupAfterDelay}
         />
       ))}
     </ul>
