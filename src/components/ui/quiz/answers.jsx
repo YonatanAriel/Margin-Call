@@ -34,7 +34,9 @@ function Answers({
       >
         {answers?.map((answer) => (
           <Answer
+            setDisableClick={setDisableClick}
             showAnswer={showAnswer}
+            setShowAnswer={setShowAnswer}
             isCorrectAnswer={isCorrectAnswer}
             key={answer}
             answer={answer}

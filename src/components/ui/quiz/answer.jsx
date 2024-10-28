@@ -2,10 +2,30 @@ import { Label } from "@/components/ui/label";
 import { RadioGroupItem } from "@/components/ui/radio-group";
 import AnswerContainer from "./answerContainer";
 import useAnswerAnimation from "@/hooks/useAnswerAnimation";
+import { useContext, useEffect } from "react";
+import { Context } from "@/context/mainContext";
 
-function Answer({ answer, handleAnswerClick, isCorrectAnswer, showAnswer }) {
-  const { userAnswered, secondAnimation, handleAnimation } =
+function Answer({
+  answer,
+  handleAnswerClick,
+  isCorrectAnswer,
+  showAnswer,
+  setShowAnswer,
+  setDisableClick,
+}) {
+  const { userAnswered, secondAnimation, startAnimation, finishAnimation } =
     useAnswerAnimation();
+
+  const { isTriedAgain } = useContext(Context);
+
+  useEffect(() => {
+    const hideAnswer = () => {
+      setShowAnswer(false);
+      finishAnimation();
+      setDisableClick(false);
+    };
+    if (isTriedAgain) hideAnswer();
+  }, [isTriedAgain]);
 
   const circleColor =
     userAnswered.correct || (showAnswer && isCorrectAnswer(answer))
@@ -16,8 +36,8 @@ function Answer({ answer, handleAnswerClick, isCorrectAnswer, showAnswer }) {
 
   const handleClick = () => {
     const isUserCorrect = isCorrectAnswer(answer);
-    if (isUserCorrect) handleAnimation(true);
-    else handleAnimation(false);
+    if (isUserCorrect) startAnimation(true);
+    else startAnimation(false);
     handleAnswerClick(answer);
   };
 

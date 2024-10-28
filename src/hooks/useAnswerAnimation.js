@@ -7,7 +7,7 @@ function useAnswerAnimation() {
   });
   const [secondAnimation, setSecondAnimation] = useState(false);
 
-  const handleAnimation = (isUserCorrect) => {
+  const startAnimation = (isUserCorrect) => {
     setTimeout(() => {
       setSecondAnimation(true);
     }, 1000);
@@ -17,6 +17,12 @@ function useAnswerAnimation() {
       setUserAnswered((prev) => ({ ...prev, incorrect: true }));
     }
   };
-  return { userAnswered, secondAnimation, handleAnimation };
+
+  const finishAnimation = () => {
+    setSecondAnimation(false);
+    setUserAnswered({ correct: false, incorrect: false });
+  };
+
+  return { userAnswered, secondAnimation, startAnimation, finishAnimation };
 }
 export default useAnswerAnimation;

@@ -1,19 +1,18 @@
-import { questions } from "@/data";
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 export const Context = createContext(undefined);
 
 function MainContext({ children }) {
   const [currentQuestions, setCurrentQuestions] = useState([]);
   const [correctAnswers, setCorrectAnswers] = useState(0);
-
-  useEffect(() => console.log(questions), []);
-
+  const [isTriedAgain, setIsTriedAgain] = useState(false);
   const contextValue = {
     currentQuestions,
     setCurrentQuestions,
     correctAnswers,
     setCorrectAnswers,
+    isTriedAgain,
+    setIsTriedAgain,
   };
   return <Context.Provider value={contextValue}>{children}</Context.Provider>;
 }
