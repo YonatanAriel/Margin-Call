@@ -4,7 +4,8 @@ import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Buttons({ hidePopup, scrollToNextQuestion }) {
-  const { setCorrectAnswers, setIsTriedAgain } = useContext(Context);
+  const { setCorrectAnswers, removeCurrentQuestions, setIsTriedAgain } =
+    useContext(Context);
 
   const navigate = useNavigate();
 
@@ -22,6 +23,7 @@ function Buttons({ hidePopup, scrollToNextQuestion }) {
 
   const handleHomeClick = () => {
     resetCorrectAnswers();
+    removeCurrentQuestions();
     navigate("/");
   };
 

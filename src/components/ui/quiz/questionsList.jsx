@@ -12,7 +12,7 @@ const QuestionsList = forwardRef(
     }, []);
 
     return (
-      <ul className="w-10/12 sm:w-8/12 lg:w-6/12 ">
+      <ul className="w-11/12 sm:w-8/12 lg:w-6/12 ">
         {currentQuestions.map((question, index) => (
           <Question
             ref={(domElement) => (ref.current[index] = domElement)}

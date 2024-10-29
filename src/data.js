@@ -9,6 +9,7 @@ export const topics = [
   "media queries",
   "Pseudo-classes & elements",
 ];
+
 export const questions = {
   "Pseudo-classes & elements": [
     {
@@ -602,24 +603,22 @@ export const questions = {
   ],
   grid: [
     {
-      question:
-        "Which value of 'grid-auto-flow' property handles both row-filling behavior and attempts to fill holes in the grid?",
+      question: "Which 'grid-auto-flow' value fills rows and grid holes?",
       answers: ["row dense", "dense", "row", "auto-dense"],
       correctAnswer: "row dense",
     },
     {
-      question: "In CSS Grid, what does the 'fr' unit represent?",
+      question: "In Grid, what does 'fr' stand for?",
       answers: [
         "Fixed ratio",
-        "Fractional unit of remaining space",
+        "Fractional unit of space",
         "Frame rate",
         "Fixed rows",
       ],
-      correctAnswer: "Fractional unit of remaining space",
+      correctAnswer: "Fractional unit of space",
     },
     {
-      question:
-        "What is the correct syntax for creating a 3x3 grid with equal-sized cells using the grid-template property?",
+      question: "How to create a 3x3 grid with equal cells?",
       answers: [
         "grid-template: 3 / 3",
         "grid-template: repeat(3, 1fr) / repeat(3, 1fr)",
@@ -629,7 +628,7 @@ export const questions = {
       correctAnswer: "grid-template: repeat(3, 1fr) / repeat(3, 1fr)",
     },
     {
-      question: "Which property can be used to create a named grid area?",
+      question: "Which property names grid areas?",
       answers: [
         "grid-name",
         "grid-template-areas",
@@ -639,25 +638,22 @@ export const questions = {
       correctAnswer: "grid-template-areas",
     },
     {
-      question:
-        "What does the 'span' keyword do in grid-column or grid-row properties?",
+      question: "What does 'span' do in grid-column/row?",
       answers: [
         "Creates a new column/row",
-        "Specifies how many cells the item should span",
-        "Adds spacing between cells",
-        "Defines the grid gap",
+        "Specifies cell span",
+        "Adds cell spacing",
+        "Defines grid gap",
       ],
-      correctAnswer: "Specifies how many cells the item should span",
+      correctAnswer: "Specifies cell span",
     },
     {
-      question:
-        "What is the default value of 'grid-auto-columns' and 'grid-auto-rows'?",
+      question: "Default value of 'grid-auto-columns' and 'grid-auto-rows'?",
       answers: ["auto", "1fr", "100%", "fit-content"],
       correctAnswer: "auto",
     },
     {
-      question:
-        "How can you create a grid track that is sized according to its content using minmax()?",
+      question: "How does minmax() create content-sized tracks?",
       answers: [
         "minmax(auto, content)",
         "minmax(min-content, max-content)",
@@ -667,72 +663,64 @@ export const questions = {
       correctAnswer: "minmax(min-content, max-content)",
     },
     {
-      question: "What happens when you use 'grid-auto-flow: dense'?",
+      question: "What does 'grid-auto-flow: dense' do?",
       answers: [
-        "Items are automatically sized",
-        "Grid attempts to fill holes earlier in the grid",
-        "Grid becomes more compact",
-        "Items flow in dense columns",
+        "Items auto-size",
+        "Fills earlier grid holes",
+        "Makes grid compact",
+        "Items flow densely",
       ],
-      correctAnswer: "Grid attempts to fill holes earlier in the grid",
+      correctAnswer: "Fills earlier grid holes",
     },
     {
-      question:
-        "Which property allows you to align all items within their grid areas along the block (column) axis?",
+      question: "Which aligns items along the column axis?",
       answers: ["justify-items", "align-items", "place-items", "align-content"],
       correctAnswer: "align-items",
     },
     {
-      question:
-        "What is the difference between 'auto-fit' and 'auto-fill' in repeat()?",
+      question: "Difference between 'auto-fit' and 'auto-fill'?",
       answers: [
-        "No difference, they are aliases",
-        "auto-fill creates empty tracks, auto-fit collapses them",
-        "auto-fit creates empty tracks, auto-fill collapses them",
-        "auto-fill is not a valid value",
+        "No difference",
+        "auto-fill creates empty tracks, auto-fit collapses",
+        "auto-fit creates empty tracks, auto-fill collapses",
+        "auto-fill is invalid",
       ],
-      correctAnswer: "auto-fill creates empty tracks, auto-fit collapses them",
+      correctAnswer: "auto-fill creates empty tracks, auto-fit collapses",
     },
   ],
   flexBox: [
     {
-      question:
-        "Which CSS property must be applied to a container to create a flex context for all its direct children?",
+      question: "Which property creates a flex container?",
       answers: ["flex-wrap", "display: flex", "flex-direction", "flex-flow"],
       correctAnswer: "display: flex",
     },
     {
-      question:
-        "What is the default value of 'flex-direction' property in a flex container?",
+      question: "What is the default flex-direction?",
       answers: ["row-reverse", "column", "row", "column-reverse"],
       correctAnswer: "row",
     },
     {
-      question:
-        "When using 'justify-content: space-between', what happens to the space distribution?",
+      question: "What does 'justify-content: space-between' do?",
       answers: [
-        "Equal space between items with no space at edges",
-        "Equal space between and at edges",
-        "All space at the start",
-        "All space at the end",
+        "Spaces between items, no edges",
+        "Spaces between items and edges",
+        "All items aligned to start",
+        "All items aligned to end",
       ],
-      correctAnswer: "Equal space between items with no space at edges",
+      correctAnswer: "Even spacing between items, none at edges",
     },
     {
-      question:
-        "Which property determines whether flex items are forced onto one line or can wrap onto multiple lines?",
+      question: "Which property lets items wrap to multiple lines?",
       answers: ["flex-line", "flex-wrap", "flex-flow", "flex-basis"],
       correctAnswer: "flex-wrap",
     },
     {
-      question:
-        "What is the shorthand property that combines 'flex-grow', 'flex-shrink', and 'flex-basis'?",
+      question: "What combines flex-grow, flex-shrink, flex-basis?",
       answers: ["flex-shorthand", "flex", "flex-combo", "flex-all"],
       correctAnswer: "flex",
     },
     {
-      question:
-        "If a flex item has 'flex: 0 1 auto', what does each number/keyword represent in order?",
+      question: "In 'flex: 0 1 auto', what is each part?",
       answers: [
         "shrink, grow, basis",
         "grow, shrink, basis",
@@ -742,8 +730,7 @@ export const questions = {
       correctAnswer: "grow, shrink, basis",
     },
     {
-      question:
-        "Which alignment property is used to align flex items when they don't use all available space on the cross-axis?",
+      question: "Which aligns items along the cross-axis?",
       answers: [
         "justify-content",
         "align-items",
@@ -753,24 +740,23 @@ export const questions = {
       correctAnswer: "align-content",
     },
     {
-      question:
-        "What happens to flex items when 'flex-wrap: wrap-reverse' is applied?",
+      question: "What does 'flex-wrap: wrap-reverse' do?",
       answers: [
-        "Items wrap in reverse order on multiple lines",
-        "Items reverse order but stay on one line",
-        "Items wrap normally but cross-axis is reversed",
-        "Items don't wrap at all",
+        "Reverses order on multiple lines",
+        "Reverses order on one line",
+        "Wraps normally, cross-axis reversed",
+        "No wrap",
       ],
-      correctAnswer: "Items wrap normally but cross-axis is reversed",
+      correctAnswer: "Wraps normally, cross-axis reversed",
     },
     {
-      question: "What is the default value of the 'flex-grow' property?",
+      question: "What’s the default for 'flex-grow'?",
       answers: ["1", "0", "auto", "initial"],
       correctAnswer: "0",
     },
     {
       question:
-        "In a flex container with 'flex-direction: column', which property controls alignment along the horizontal axis?",
+        "With 'flex-direction: column', which aligns items horizontally?",
       answers: [
         "justify-content",
         "align-items",
@@ -781,64 +767,3 @@ export const questions = {
     },
   ],
 };
-//   {
-//     question: "What is the capital of Japan?",
-//     answers: ["Beijing", "Seoul", "Bangkok", "Tokyo"],
-//     correctAnswer: "Tokyo",
-//   },
-//   {
-//     question: "Which language is primarily used for styling web pages?",
-//     answers: ["HTML", "CSS", "JavaScript", "Python"],
-//     correctAnswer: "CSS",
-//   },
-//   {
-//     question: "What is the largest planet in our solar system?",
-//     answers: ["Earth", "Jupiter", "Saturn", "Mars"],
-//     correctAnswer: "Jupiter",
-//   },
-//   {
-//     question: "Who wrote 'Hamlet'?",
-//     answers: [
-//       "Leo Tolstoy",
-//       "Charles Dickens",
-//       "William Shakespeare",
-//       "Mark Twain",
-//     ],
-//     correctAnswer: "William Shakespeare",
-//   },
-//   {
-//     question: "What is the chemical symbol for water?",
-//     answers: ["O2", "H2O", "CO2", "HO"],
-//     correctAnswer: "H2O",
-//   },
-//   {
-//     question: "Which country is known for inventing pizza?",
-//     answers: ["France", "Italy", "Greece", "Spain"],
-//     correctAnswer: "Italy",
-//   },
-//   {
-//     question: "Which ocean is the largest?",
-//     answers: ["Atlantic", "Indian", "Pacific", "Arctic"],
-//     correctAnswer: "Pacific",
-//   },
-//   {
-//     question: "What is the square root of 64?",
-//     answers: ["6", "7", "8", "9"],
-//     correctAnswer: "8",
-//   },
-//   {
-//     question: "Who was the first person to walk on the moon?",
-//     answers: [
-//       "Buzz Aldrin",
-//       "Yuri Gagarin",
-//       "Neil Armstrong",
-//       "Michael Collins",
-//     ],
-//     correctAnswer: "Neil Armstrong",
-//   },
-//   {
-//     question: "Which continent is the Sahara Desert located on?",
-//     answers: ["Asia", "Australia", "Africa", "South America"],
-//     correctAnswer: "Africa",
-//   },
-// ];

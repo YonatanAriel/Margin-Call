@@ -10,7 +10,7 @@ const Question = forwardRef(
       className="flex flex-col justify-center h-screen "
     >
       <div className="p-5 rounded-md h-fit ">
-        <h3 className=" text-xl min-[400px]:text-2xl mb-8 text-strongPurple font-bold">
+        <h3 className=" text-xl  min-[400px]:text-2xl mb-8 text-strongPurple font-bold">
           <span className="text-regularPurple">{`${index + 1}. `}</span>
           {q.question}
         </h3>
