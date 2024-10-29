@@ -1,15 +1,10 @@
-import { Context } from "@/context/mainContext";
-import { useContext } from "react";
-import { questions } from "@/data";
 import { useNavigate } from "react-router-dom";
 
 function TopicCard({ topic }) {
-  const { setCurrentQuestions } = useContext(Context);
   const navigate = useNavigate();
 
   const startQuiz = () => {
-    setCurrentQuestions(questions[topic]);
-    navigate("/quiz");
+    navigate(`/quiz/?topic=${topic}`);
   };
 
   return (

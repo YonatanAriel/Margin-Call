@@ -4,15 +4,25 @@ import QuizBackground from "@/components/ui/quiz/quizBackground";
 import { Context } from "@/context/mainContext";
 import usePopup from "@/hooks/usePopup";
 import useQuizNavigation from "@/hooks/useQuizNavigation";
-import { useContext } from "react";
+import { useContext, useLayoutEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import { questions } from "@/data";
 
 function Quiz() {
   const { isPopupVisible, showPopupAfterDelay, hidePopup } = usePopup();
 
-  const { currentQuestions } = useContext(Context);
+  const { currentQuestions, setCurrentQuestions } = useContext(Context);
 
   const { scrollToNextQuestion, questionRefs } =
     useQuizNavigation(currentQuestions);
+
+  const [searchParams] = useSearchParams();
+  const topic = searchParams.get("topic");
+
+  useLayoutEffect(() => {
+    setCurrentQuestions(questions[topic]);
+  }, [topic]);
+
   return (
     <div className="flex justify-center w-full min-h-screen ">
       <QuizBackground />
