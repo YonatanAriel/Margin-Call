@@ -21,12 +21,12 @@ export const questions = {
     {
       question: "What does the CSS pseudo-element `::before` do?",
       answers: [
-        "Adds content before an element’s first child",
-        "Adds content at the beginning of the element itself",
-        "Inserts content before the parent element",
-        "Inserts content inside the parent but after the last child",
+        "Before first child",
+        "Start of element",
+        "Before parent",
+        "After last child",
       ],
-      correctAnswer: "Adds content at the beginning of the element itself",
+      correctAnswer: "Start of element",
     },
     {
       question: "How can you select every other list item in a list?",
@@ -46,12 +46,12 @@ export const questions = {
     {
       question: "What does the `:not()` pseudo-class do?",
       answers: [
-        "Selects elements that do not match a certain selector",
-        "Selects elements that are hidden",
-        "Selects the last element in a list",
-        "Excludes elements of a certain type",
+        "Non-matching only",
+        "Hides elements",
+        "Selects last",
+        "Excludes types",
       ],
-      correctAnswer: "Selects elements that do not match a certain selector",
+      correctAnswer: "Non-matching only",
     },
     {
       question:
@@ -65,14 +65,14 @@ export const questions = {
       correctAnswer: "::first-line",
     },
     {
-      question: "What does `:hover` allow you to do in CSS?",
+      question: "When using :hover, what behavior occurs on touch devices?",
       answers: [
-        "Style an element when a user clicks on it",
-        "Style an element when a user hovers over it",
-        "Style an element only when it’s focused",
-        "Style an element only when it’s the first child",
+        "Triggers on tap",
+        "No effect",
+        "Double tap needed",
+        "Works like desktop",
       ],
-      correctAnswer: "Style an element when a user hovers over it",
+      correctAnswer: "Triggers on tap",
     },
     {
       question:
@@ -92,14 +92,14 @@ export const questions = {
       correctAnswer: ":first-child",
     },
     {
-      question: "What does the `:checked` pseudo-class select?",
+      question: "What states can :checked select?",
       answers: [
-        "Radio buttons or checkboxes that are checked",
-        "All form elements with default values",
-        "Only radio buttons",
-        "Only checkboxes",
+        "Radio selected",
+        "Both radio & check",
+        "Only checkbox",
+        "Any input select",
       ],
-      correctAnswer: "Radio buttons or checkboxes that are checked",
+      correctAnswer: "Both radio & check",
     },
   ],
   "media queries": [
@@ -163,25 +163,16 @@ export const questions = {
       ],
       correctAnswer: "@media resolution",
     },
+
     {
       question: "What's the correct syntax for combining media queries?",
-      answers: [
-        "@media (min-width: 768px) && (max-width: 1024px)",
-        "@media (min-width: 768px) and (max-width: 1024px)",
-        "@media (min-width: 768px), (max-width: 1024px)",
-        "@media (768px to 1024px)",
-      ],
-      correctAnswer: "@media (min-width: 768px) and (max-width: 1024px)",
+      answers: ["with &&", "with 'and'", "with comma", "with 'to'"],
+      correctAnswer: "with 'and'",
     },
     {
       question: "Which targets dark mode preference?",
-      answers: [
-        "@media dark",
-        "@media (prefers-color-scheme: dark)",
-        "@dark-mode",
-        "@media darkness",
-      ],
-      correctAnswer: "@media (prefers-color-scheme: dark)",
+      answers: ["@media dark", "prefers-dark", "@dark-mode", "@media darkness"],
+      correctAnswer: "prefers-dark",
     },
     {
       question: "What's a container query?",
@@ -243,12 +234,12 @@ export const questions = {
     {
       question: "What does 'backface-visibility: hidden' do?",
       answers: [
-        "Hides back of rotated element",
+        "Hides back side",
         "Removes shadows",
-        "Hides front face",
-        "Removes perspective",
+        "Hides front",
+        "No perspective",
       ],
-      correctAnswer: "Hides back of rotated element",
+      correctAnswer: "Hides back side",
     },
     {
       question: "How to move an element 50px up?",
@@ -285,9 +276,9 @@ export const questions = {
     {
       question: "Which creates a soft shadow without offset?",
       answers: [
-        "box-shadow: 0 0 10px black",
+        "box-shadow: 0 0 10px",
         "shadow: blur 10px",
-        "box-shadow: 10px black",
+        "box-shadow: 10px",
         "shadow: 0 0 10px",
       ],
       correctAnswer: "box-shadow: 0 0 10px black",
@@ -295,12 +286,12 @@ export const questions = {
     {
       question: "What's the difference between rgb and hsl?",
       answers: [
-        "Nothing",
-        "RGB uses numbers, HSL uses names",
-        "RGB uses color values, HSL uses angles and percentages",
-        "HSL isn't supported",
+        "No difference",
+        "Numbers vs names",
+        "Values vs angles",
+        "HSL not supported",
       ],
-      correctAnswer: "RGB uses color values, HSL uses angles and percentages",
+      correctAnswer: "Values vs angles",
     },
     {
       question: "How do you create a diagonal gradient?",
@@ -350,24 +341,24 @@ export const questions = {
     {
       question: "Which creates a repeating gradient pattern?",
       answers: [
-        "gradient-repeat()",
-        "repeating-linear-gradient()",
-        "repeat-gradient()",
-        "pattern-gradient()",
+        "gradient-repeat",
+        "repeat-linear",
+        "repeat-gradient",
+        "pattern-gradient",
       ],
-      correctAnswer: "repeating-linear-gradient()",
+      correctAnswer: "repeat-linear",
     },
   ],
   "box model": [
     {
       question: "What does 'box-sizing: border-box' do?",
       answers: [
-        "Excludes padding from width",
-        "Includes padding and border in width",
-        "Only includes margin in width",
-        "Only includes border in width",
+        "Excludes padding",
+        "Includes pad + border",
+        "Only includes margin",
+        "Only includes border",
       ],
-      correctAnswer: "Includes padding and border in width",
+      correctAnswer: "Includes pad + border",
     },
     {
       question: "Which property creates space between elements?",
@@ -444,12 +435,12 @@ export const questions = {
     {
       question: "What does the selector 'p:first-of-type' target?",
       answers: [
-        "First p tag on the page",
-        "First p tag within its parent",
-        "First child that's a p tag",
-        "All p tags",
+        "First p in page",
+        "First p in parent",
+        "First child p",
+        "All p elements",
       ],
-      correctAnswer: "First p tag within its parent",
+      correctAnswer: "First p in parent",
     },
     {
       question:
@@ -542,13 +533,9 @@ export const questions = {
     },
     {
       question: "Which timing function creates a bounce effect?",
-      answers: [
-        "ease",
-        "linear",
-        "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
-        "ease-in",
-      ],
-      correctAnswer: "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+
+      answers: ["ease", "linear", "cubic-bezier", "ease-in"],
+      correctAnswer: "cubic-bezier",
     },
     {
       question: "What does 'animation-fill-mode: forwards' do?",
@@ -577,13 +564,8 @@ export const questions = {
     },
     {
       question: "How do you make an animation play in reverse?",
-      answers: [
-        "reverse",
-        "alternate",
-        "animation-direction: reverse",
-        "backwards",
-      ],
-      correctAnswer: "animation-direction: reverse",
+      answers: ["reverse", "alternate", "direction:reverse", "backwards"],
+      correctAnswer: "direction:reverse",
     },
     {
       question: "Which transition-timing-function is the default?",
@@ -619,14 +601,10 @@ export const questions = {
     },
     {
       question: "How to create a 3x3 grid with equal cells?",
-      answers: [
-        "grid-template: 3 / 3",
-        "grid-template: repeat(3, 1fr) / repeat(3, 1fr)",
-        "grid-template: 3x3",
-        "grid-template: auto auto auto",
-      ],
-      correctAnswer: "grid-template: repeat(3, 1fr) / repeat(3, 1fr)",
+      answers: ["grid: 3/3", "repeat(3,1fr)", "grid: 3x3", "3 auto rows/cols"],
+      correctAnswer: "repeat(3,1fr)",
     },
+
     {
       question: "Which property names grid areas?",
       answers: [
@@ -638,14 +616,9 @@ export const questions = {
       correctAnswer: "grid-template-areas",
     },
     {
-      question: "What does 'span' do in grid-column/row?",
-      answers: [
-        "Creates a new column/row",
-        "Specifies cell span",
-        "Adds cell spacing",
-        "Defines grid gap",
-      ],
-      correctAnswer: "Specifies cell span",
+      question: "What does 'span' do in grid?",
+      answers: ["New track", "Extends cells", "Adds spacing", "Sets gap size"],
+      correctAnswer: "Extends cells",
     },
     {
       question: "Default value of 'grid-auto-columns' and 'grid-auto-rows'?",
@@ -653,14 +626,9 @@ export const questions = {
       correctAnswer: "auto",
     },
     {
-      question: "How does minmax() create content-sized tracks?",
-      answers: [
-        "minmax(auto, content)",
-        "minmax(min-content, max-content)",
-        "minmax(content, auto)",
-        "minmax(auto, auto)",
-      ],
-      correctAnswer: "minmax(min-content, max-content)",
+      question: "Best use of minmax()?",
+      answers: ["auto,content", "min/max-content", "content,auto", "auto,auto"],
+      correctAnswer: "min/max-content",
     },
     {
       question: "What does 'grid-auto-flow: dense' do?",
@@ -678,14 +646,14 @@ export const questions = {
       correctAnswer: "align-items",
     },
     {
-      question: "Difference between 'auto-fit' and 'auto-fill'?",
+      question: "auto-fit vs auto-fill?",
       answers: [
-        "No difference",
-        "auto-fill creates empty tracks, auto-fit collapses",
-        "auto-fit creates empty tracks, auto-fill collapses",
-        "auto-fill is invalid",
+        "Same thing",
+        "fill:empty fit:no",
+        "fit:empty fill:no",
+        "fill is wrong",
       ],
-      correctAnswer: "auto-fill creates empty tracks, auto-fit collapses",
+      correctAnswer: "fill:empty fit:no",
     },
   ],
   flexBox: [
@@ -700,14 +668,19 @@ export const questions = {
       correctAnswer: "row",
     },
     {
-      question: "What does 'justify-content: space-between' do?",
+      question: "What does 'space-around' do?",
+      answers: ["Even space all", "Between only", "From edges", "Center align"],
+      correctAnswer: "Even space all",
+    },
+    {
+      question: "What does 'flex-wrap: wrap-reverse' do?",
       answers: [
-        "Spaces between items, no edges",
-        "Spaces between items and edges",
-        "All items aligned to start",
-        "All items aligned to end",
+        "Reverse wrap",
+        "One line reverse",
+        "Cross-axis flip",
+        "No wrapping",
       ],
-      correctAnswer: "Even spacing between items, none at edges",
+      correctAnswer: "Cross-axis flip",
     },
     {
       question: "Which property lets items wrap to multiple lines?",
@@ -739,16 +712,7 @@ export const questions = {
       ],
       correctAnswer: "align-content",
     },
-    {
-      question: "What does 'flex-wrap: wrap-reverse' do?",
-      answers: [
-        "Reverses order on multiple lines",
-        "Reverses order on one line",
-        "Wraps normally, cross-axis reversed",
-        "No wrap",
-      ],
-      correctAnswer: "Wraps normally, cross-axis reversed",
-    },
+
     {
       question: "What’s the default for 'flex-grow'?",
       answers: ["1", "0", "auto", "initial"],
