@@ -12,7 +12,7 @@ function Titles() {
       ? "4rem"
       : screenWidth > 350
       ? "3.5rem"
-      : "3.3rem";
+      : "3rem";
   const titleMarginBottom =
     screenWidth > 950
       ? "-2rem"
@@ -36,7 +36,7 @@ function Titles() {
     <>
       <div
         style={{ marginBottom: titleMarginBottom }}
-        className="-mb-8 text-transparent bg-gradient-to-r from-lightPurple via-lightPurple to-veryLightPurple bg-clip-text"
+        className="-mb-8 text-transparent bg-lightPurple opacity-80 lg:bg-gradient-to-r from-lightPurple via-lightPurple to-veryLightPurple bg-clip-text"
       >
         <h1
           className="font-bold "

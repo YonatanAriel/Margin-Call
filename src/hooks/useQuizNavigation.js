@@ -21,7 +21,7 @@ function useQuizNavigation(questions) {
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
         setIsUserScrolling(false);
-      }, 700);
+      }, 400);
     };
 
     window.addEventListener("scroll", handleScroll);

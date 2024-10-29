@@ -7,6 +7,7 @@ export default {
     extend: {
       animation: {
         backgroundColor: "background 5s ease infinite",
+        "spin-slow": "spin-clockwise 4s linear infinite",
       },
       keyframes: {
         background: {

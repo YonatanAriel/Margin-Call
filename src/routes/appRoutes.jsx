@@ -8,7 +8,14 @@ const Quiz = lazy(() => import("@/pages/quiz"));
 function AppRoutes() {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route
+        path="/"
+        element={
+          <Suspense fallback={<Loading />}>
+            <Home />
+          </Suspense>
+        }
+      />
       <Route
         path="quiz"
         element={
