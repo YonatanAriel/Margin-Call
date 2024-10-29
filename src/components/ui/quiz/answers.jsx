@@ -16,9 +16,13 @@ function Answers({
 
   const isCorrectAnswer = (clickedAnswer) => correctAnswer === clickedAnswer;
   const handleCorrectAnswer = () => setCorrectAnswers((prev) => prev + 1);
-  const revealAnswer = () => setShowAnswer(true);
+  const revealAnswer = () => {
+    console.log("reviling answer");
+    setShowAnswer(true);
+  };
 
   const handleAnswerClick = (clickedAnswer) => {
+    if (disableClick) return;
     setDisableClick(true);
     isCorrectAnswer(clickedAnswer) ? handleCorrectAnswer() : revealAnswer();
     const isLastQuestion = currentQuestions?.length - 1 == index;
@@ -29,7 +33,7 @@ function Answers({
     <>
       <RadioGroup
         className={`${
-          disableClick && "pointer-events-none"
+          disableClick && " pointer-events-none "
         } flex flex-col gap-5`}
       >
         {answers?.map((answer) => (

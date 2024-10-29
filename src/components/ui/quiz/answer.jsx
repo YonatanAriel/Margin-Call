@@ -48,8 +48,8 @@ function Answer({
       handleClick={handleClick}
     >
       <RadioGroupItem
-        value={answer}
-        id={answer}
+        // value={answer}
+        // id={answer}
         className={` w-6 h-6 
           ${circleColor}`}
       />
