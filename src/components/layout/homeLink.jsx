@@ -1,15 +1,17 @@
 import { getRandomArrayItem } from "@/lib/utils";
 import { Link, useLocation } from "react-router-dom";
 import { topics } from "@/data";
-import { useMemo } from "react";
+import { useContext, useMemo } from "react";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { Context } from "@/context/mainContext";
 
 function HomeLink() {
+  const { setCorrectAnswers, removeCurrentQuestions } = useContext(Context);
   const location = useLocation().pathname;
 
   const funnyTooltips = useMemo(
@@ -25,11 +27,18 @@ function HomeLink() {
 
   const target = location === "/" ? `/quiz/?topic=${randomTopic}` : "/";
 
+  const handleClick = () => {
+    if (location === "/") return;
+    setCorrectAnswers(0);
+    removeCurrentQuestions();
+  };
+
   return (
     <TooltipProvider>
       <Tooltip>
         <TooltipTrigger asChild>
           <Link
+            onClick={handleClick}
             className="fixed z-10 left-9 bottom-9"
             aria-label={`${
               location === "/" ? "Random Quiz Link" : "Link to home"
