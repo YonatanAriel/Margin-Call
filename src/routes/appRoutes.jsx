@@ -17,7 +17,7 @@ function AppRoutes() {
         }
       />
       <Route
-        path="quiz"
+        path="/quiz"
         element={
           <Suspense fallback={<Loading />}>
             <Quiz />
