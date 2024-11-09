@@ -48,7 +48,7 @@ function HomeLink() {
             <img
               className="h-10 border-black hover:animate-jelly animate-spin-slow"
               src="\question4-Photoroom.png"
-              alt=""
+              alt={location === "/" ? "Random Quiz Link" : "Link to home"}
             />
           </Link>
         </TooltipTrigger>
