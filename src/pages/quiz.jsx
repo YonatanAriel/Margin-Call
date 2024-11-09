@@ -4,7 +4,7 @@ import QuizBackground from "@/components/ui/quiz/quizBackground";
 import { Context } from "@/context/mainContext";
 import usePopup from "@/hooks/usePopup";
 import useQuizNavigation from "@/hooks/useQuizNavigation";
-import { useContext, useLayoutEffect } from "react";
+import { useContext, useEffect } from "react";
 import { useSearchParams } from "react-router-dom";
 import { questions } from "@/data";
 
@@ -17,9 +17,9 @@ function Quiz() {
     useQuizNavigation(currentQuestions);
 
   const [searchParams] = useSearchParams();
-  const topic = searchParams.get("topic");
 
-  useLayoutEffect(() => {
+  const topic = searchParams.get("topic");
+  useEffect(() => {
     setCurrentQuestions(questions[topic]);
   }, [topic]);
 
