@@ -20,7 +20,9 @@ function Quiz() {
 
   const topic = searchParams.get("topic");
   useEffect(() => {
-    setCurrentQuestions(questions[topic]);
+    if (topic) {
+      setCurrentQuestions(questions[topic]);
+    }
   }, [topic]);
 
   return (
