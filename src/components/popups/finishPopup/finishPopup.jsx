@@ -27,11 +27,9 @@ function FinishPopup({ hidePopup, scrollToNextQuestion }) {
     percentage >= 80 ? "tada" : percentage >= 45 ? "jump" : "pulse-fade-in";
 
   return (
-    //animate-pulse-fade-in  animate-jump tada
     <div
       className={`fixed z-10 flex items-center justify-center w-full h-screen backdrop-blur-sm animate-${animation} `}
     >
-      {/* <div className="fixed z-10 flex items-center justify-center w-full h-screen backdrop-blur-sm animate-tada "> */}
       <div className="flex flex-col w-11/12 gap-4 px-6 py-8 pr-4 shadow-xl sm:py-12 md:pl-14 rounded-2xl bg-veryLightPurple lg:w-6/12 sm:w-10/12 md:w-8/12 ">
         <h1 className="text-4xl font-bold animate-zoom-in text-strongPurple ">{`${correctAnswers}/${currentQuestions.length}`}</h1>
         <h3 className="text-xl text-strongPurple animate-zoom-in">

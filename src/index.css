@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 :root {
-  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
   line-height: 1.5;
 }
 
@@ -71,8 +70,6 @@
     @apply bg-background text-foreground;
   }
 }
-
-/* loader */
 
 .loader {
   width: 48px;

@@ -9,9 +9,7 @@ function Buttons({ hidePopup, scrollToNextQuestion }) {
 
   const navigate = useNavigate();
 
-  const resetCorrectAnswers = () => {
-    setCorrectAnswers(0);
-  };
+  const resetCorrectAnswers = () => setCorrectAnswers(0);
 
   const handleTryAgainClick = () => {
     resetCorrectAnswers();

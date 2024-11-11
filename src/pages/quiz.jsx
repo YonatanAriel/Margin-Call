@@ -21,9 +21,6 @@ function Quiz() {
   const topic = searchParams.get("topic");
   useEffect(() => {
     if (topic) {
-      console.log("topic = " + topic);
-      console.log("questions " + questions);
-      console.log("questions[topic] = ", questions[topic]);
       setCurrentQuestions(questions[topic]);
     }
   }, [topic]);
