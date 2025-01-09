@@ -15,6 +15,7 @@ function Buttons({ hidePopup, scrollToNextQuestion }) {
     resetCorrectAnswers();
     hidePopup();
     setIsTriedAgain(true);
+    // why the time in array?
     setTimeout(() => setIsTriedAgain(false), [1000]);
     scrollToNextQuestion(-1);
   };

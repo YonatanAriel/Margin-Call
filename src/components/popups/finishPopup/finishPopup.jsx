@@ -18,6 +18,8 @@ function FinishPopup({ hidePopup, scrollToNextQuestion }) {
     } else return "Don’t give up! Every attempt makes you better!";
   }
 
+
+  // the dependency array are not correct
   const resultMessage = useMemo(
     () => getResultMessage(),
     [correctAnswers, currentQuestions.length]

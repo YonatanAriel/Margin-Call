@@ -21,6 +21,8 @@ function Answers({
   const handleAnswerClick = (clickedAnswer) => {
     setDisableClick(true);
     isCorrectAnswer(clickedAnswer) ? handleCorrectAnswer() : revealAnswer();
+    // 1. Is the double equal sign intentional? why not use triple equal sign?
+    // 2, if you have variable that you don't sure if it there (currentQuestions?.length), add a fallback value
     const isLastQuestion = currentQuestions?.length - 1 == index;
     if (isLastQuestion) showPopupAfterDelay(1500);
     setTimeout(() => scrollToNextQuestion(index), 1500);

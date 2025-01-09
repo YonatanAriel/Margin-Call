@@ -3,6 +3,7 @@ import useScreenWidth from "@/hooks/useScreenWidth";
 function Titles() {
   const screenWidth = useScreenWidth();
 
+  //  move this to 'constants' file
   const titleFontSize =
     screenWidth > 950
       ? "6rem"

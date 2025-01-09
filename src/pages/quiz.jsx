@@ -23,6 +23,7 @@ function Quiz() {
     if (topic) {
       setCurrentQuestions(questions[topic]);
     }
+  //   You are missing a dependency here (setCurrentQuestions), you should add it
   }, [topic]);
 
   return (
