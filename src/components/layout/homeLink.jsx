@@ -12,23 +12,23 @@ import { Context } from "@/context/mainContext";
 
 function HomeLink() {
   const { setCorrectAnswers, removeCurrentQuestions } = useContext(Context);
-  const location = useLocation().pathname;
+  const currentPath = useLocation().pathname;
 
   const funnyTooltips = useMemo(
     () => ["Roulette!", "Brave?", "Don't Click"],
     []
   );
-  const randomTopic = useMemo(() => getRandomArrayItem(topics), [location]);
+  const randomTopic = useMemo(() => getRandomArrayItem(topics), [currentPath]);
 
   const tooltipContent = useMemo(
-    () => (location === "/" ? getRandomArrayItem(funnyTooltips) : "Home"),
-    [location, funnyTooltips]
+    () => (currentPath === "/" ? getRandomArrayItem(funnyTooltips) : "Home"),
+    [currentPath, funnyTooltips]
   );
 
-  const target = location === "/" ? `/quiz/?topic=${randomTopic}` : "/";
+  const target = currentPath === "/" ? `/quiz/?topic=${randomTopic}` : "/";
 
   const handleClick = () => {
-    if (location === "/") return;
+    if (currentPath === "/") return;
     setCorrectAnswers(0);
     removeCurrentQuestions();
   };
@@ -41,14 +41,14 @@ function HomeLink() {
             onClick={handleClick}
             className="fixed z-10 left-9 bottom-9"
             aria-label={`${
-              location === "/" ? "Random Quiz Link" : "Link to home"
+              currentPath === "/" ? "Random Quiz Link" : "Link to home"
             }`}
             to={target}
           >
             <img
               className="h-10 border-black hover:animate-jelly animate-spin-slow"
-              src="\question4-Photoroom.png"
-              alt={location === "/" ? "Random Quiz Link" : "Link to home"}
+              src="\question-mark.png"
+              alt={currentPath === "/" ? "Random Quiz Link" : "Link to home"}
             />
           </Link>
         </TooltipTrigger>

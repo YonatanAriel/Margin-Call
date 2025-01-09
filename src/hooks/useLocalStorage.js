@@ -13,15 +13,15 @@ const useLocalStorage = (key, initialValue) => {
 
   const [value, setValue] = useState(getUseStateValue);
 
-  useEffect(() => {
-    const addToLS = () => {
-      try {
-        localStorage.setItem(key, JSON.stringify(value));
-      } catch (error) {
-        console.error(`Error writing to localStorage: ${error}`);
-      }
-    };
+  const addToLS = () => {
+    try {
+      localStorage.setItem(key, JSON.stringify(value));
+    } catch (error) {
+      console.error(`Error writing to localStorage: ${error}`);
+    }
+  };
 
+  useEffect(() => {
     addToLS();
   }, [key, value]);
 

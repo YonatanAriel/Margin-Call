@@ -21,7 +21,7 @@ function Answers({
   const handleAnswerClick = (clickedAnswer) => {
     setDisableClick(true);
     isCorrectAnswer(clickedAnswer) ? handleCorrectAnswer() : revealAnswer();
-    const isLastQuestion = currentQuestions?.length - 1 == index;
+    const isLastQuestion = currentQuestions?.length - 1 === index;
     if (isLastQuestion) showPopupAfterDelay(1500);
     setTimeout(() => scrollToNextQuestion(index), 1500);
   };

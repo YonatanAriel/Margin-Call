@@ -23,7 +23,7 @@ function Quiz() {
     if (topic) {
       setCurrentQuestions(questions[topic]);
     }
-  }, [topic]);
+  }, [topic, setCurrentQuestions]);
 
   return (
     <div className="flex justify-center w-full min-h-screen ">
